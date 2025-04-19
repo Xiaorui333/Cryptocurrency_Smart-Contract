@@ -1,80 +1,71 @@
-# 🏗 Scaffold-ETH 2
+# Uniswap V2 Scaffold
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+A Next.js application that provides a natural language interface for interacting with Uniswap V2 pools. Users can perform swaps, add/remove liquidity, and analyze pool data using natural language instructions.
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+## Prerequisites
 
-⚙️ Built using NextJS, RainbowKit, Foundry, Wagmi, Viem, and Typescript.
+- Node.js (v16 or later)
+- npm or yarn
+- An Ethereum wallet (MetaMask recommended)
+- OpenAI API key (for OpenAI LLM support)
+- other servers if you like
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+## Running the Application
 
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
-
-## Requirements
-
-Before you begin, you need to install the following tools:
-
-- [Node (>= v20.18.3)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
-
-## Quickstart
-
-To get started with Scaffold-ETH 2, follow the steps below:
-
-1. Install dependencies if it was skipped in CLI:
-
-```
-cd my-dapp-example
-yarn install
+1. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-2. Run a local network in the first terminal:
+2. Open your browser and navigate to https://uniswapscaffoldtenderly-84bwgcpqp-xiaorui333s-projects.vercel.app/
 
-```
-yarn chain
-```
+3. Connect to MetaMask,and import account using tenderly sepolia test net https://sepolia.gateway.tenderly.co/3LHjq0femh1vQGSzIVMCy5
 
-This command starts a local Ethereum network using Foundry. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `packages/foundry/foundry.toml`.
+4. Get your test faucet before start
 
-3. On a second terminal, deploy the test contract:
+## Usage Guide
 
-```
-yarn deploy
-```
+### Smart contract interactions 
 
-This command deploys a test smart contract to the local network. The contract is located in `packages/foundry/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/foundry/script` to deploy the contract to the network. You can also customize the deploy script.
+1. Approve token
+2. Add Liquidity – to supply token pairs to the pool
+3. Remove Liquidity – to withdraw liquidity
+4. Swap – for token exchanges, support 
 
-4. On a third terminal, start your NextJS app:
+### Pool Analytics
 
-```
-yarn start
-```
+The application provides two main analytics views:
+1. **Reserves Curve**:
+   - Visualizes the constant product formula (x * y = k)
+   - Shows current reserves and k value
+   - Displays movement trajectory for swaps and liquidity changes
+2. **Swap Price Distribution**:
+   - Shows the distribution of swap prices
+   - Helps analyze trading patterns and price impact
 
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
+### Natural Language Interface
 
-Run smart contract test with `yarn foundry:test`
+1. Navigate to the "LLM Interaction" page
+2. Choose your preferred LLM (OpenAI or Custom LLM)
+3. Enter your instruction in natural language, for example:
+   - "Swap 0.1 ETH for USDC"
+   - "Add 1000 USDC and 0.5 ETH as liquidity"
+   - "Show me the pool analytics"
+   - "How many swaps occurred in the last 24 hours?"
 
-- Edit your smart contracts in `packages/foundry/contracts`
-- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
-- Edit your deployment scripts in `packages/foundry/script`
+### Task Evaluation
 
+1. Navigate to the "Task Evaluation" page
+2. Enter your task description
+3. The system will process your request using both LLMs and display:
+   - Raw LLM responses
+   - SQL query results (if applicable)
+   - Natural language answers
+   - Relevant contract operation interfaces
 
-## Documentation
+## Future improvement
 
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
+1. Support more pool types and multi-token routing
 
-To know more about its features, check out our [website](https://scaffoldeth.io).
-
-## Contributing to Scaffold-ETH 2
-
-We welcome contributions to Scaffold-ETH 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
