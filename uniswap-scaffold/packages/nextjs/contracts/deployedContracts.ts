@@ -54,6 +54,30 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "allPairsWithTokens",
+          inputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
           name: "createPair",
           inputs: [
             {
@@ -185,7 +209,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1743712615.json",
+      deploymentFile: "run-1743719292.json",
       deploymentScript: "Deploy.s.sol",
     },
     WETH9: {
@@ -473,7 +497,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1743712615.json",
+      deploymentFile: "run-1743719292.json",
       deploymentScript: "Deploy.s.sol",
     },
     UniswapV2Router02: {
@@ -1452,7 +1476,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1743712615.json",
+      deploymentFile: "run-1743719292.json",
       deploymentScript: "Deploy.s.sol",
     },
     TestERC20: {
@@ -1671,7 +1695,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1743712615.json",
+      deploymentFile: "run-1743719292.json",
       deploymentScript: "Deploy.s.sol",
     },
   },

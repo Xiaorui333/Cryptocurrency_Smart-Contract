@@ -6,7 +6,8 @@ import { AddLiquidity } from "~~/components/addLiquidity";
 import { RemoveLiquidity } from "~~/components/removeLiquidity";
 import { Swap } from "~~/components/Swap";
 import { PoolAnalytics } from "~~/components/PoolAnalytics"; // Bonding curve
-import { SwapPriceDistribution } from "~~/components/SwapPriceDistribution"; // Price histogram
+import { SwapPriceDistribution } from "~~/components/SwapPriceDistribution";
+import erc20Abi from "~~/abis/TestERC20.json"; // Price histogram
 
 type EthAddress = `0x${string}`;
 
